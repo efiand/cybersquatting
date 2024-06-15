@@ -1,0 +1,37 @@
+html {
+	font-size: 32px; // rem support
+	line-height: 1.2;
+}
+
+body {
+	display: flex;
+	box-sizing: border-box;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	padding: 24px;
+	font-family: 'Times New Roman', serif;
+	color: #323232;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: transparent;
+	background-image: linear-gradient(to top, #cfd9df, #e2ebf0);
+
+	@media (min-width: 768px) {
+		padding: 64px;
+	}
+}
+
+main {
+	margin: auto;
+	padding: inherit;
+	background-color: #ffffff;
+	border-radius: 4px;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+a {
+	color: inherit;
+	text-decoration-skip-ink: none;
+}
