@@ -1,0 +1,28 @@
+{
+	"name": "efiand-cybersquatting",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"type-check": "vue-tsc --build --force",
+		"dev": "vite",
+		"lint-format": "npm run type-check && prettier --write . && eslint . --fix && stylelint **/*.scss --fix",
+		"lint": "npm run type-check && prettier --check . && eslint . && stylelint **/*.scss",
+		"preview": "vite preview",
+		"build": "npm run type-check && vite build"
+	},
+	"devDependencies": {
+		"efiand-shared": "0.1.5",
+		"eslint": "9.12.0",
+		"pre-commit": "1.2.2",
+		"prettier": "3.3.3",
+		"stylelint": "16.10.0",
+		"vite": "5.4.10",
+		"vite-plugin-html": "3.2.2",
+		"vite-plugin-singlefile": "2.0.1"
+	},
+	"pre-commit": "lint-format",
+	"browserslist": [
+		"> 1%",
+		"last 2 version"
+	]
+}
