@@ -1,3 +1,7 @@
-import { prettierConfig } from 'efiand-shared/config/prettier.js';
-
-export default prettierConfig;
+export default {
+	htmlWhitespaceSensitivity: 'ignore',
+	quoteProps: 'consistent',
+	singleQuote: true,
+	trailingComma: 'none',
+	useTabs: true
+};

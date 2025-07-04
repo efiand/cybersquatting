@@ -1,27 +1,29 @@
-import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
-import { viteSingleFile } from 'vite-plugin-singlefile';
+import copy from 'rollup-plugin-copy';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-	base: '',
+// https://vite.dev/config/
+export default {
+	build: {
+		emptyOutDir: true
+	},
 	css: {
 		preprocessorOptions: {
 			scss: {
-				api: 'modern-compiler',
-			},
-		},
+				api: 'modern-compiler'
+			}
+		}
 	},
 	plugins: [
-		viteSingleFile(),
-		createHtmlPlugin({
-			minify: true,
-		}),
-	],
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url)),
-		},
-	},
-});
+		ViteMinifyPlugin(),
+		copy({
+			hook: 'writeBundle',
+			targets: [
+				{
+					dest: 'dist',
+					rename: '404.html',
+					src: 'dist/index.html'
+				}
+			]
+		})
+	]
+};
